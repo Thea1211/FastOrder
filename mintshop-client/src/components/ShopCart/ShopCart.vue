@@ -69,7 +69,7 @@ export default {
           // 实现BScroll的实例是一个单例
           if (!this.scroll) {
             this.scroll = new BScroll('.list-content', {
-              click: true
+              click: false
             })
           } else {
             console.log(555)

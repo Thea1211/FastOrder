@@ -7,13 +7,21 @@ import ShopGoods from '../pages/Shop/ShopGoods/ShopGoods.vue'
 import ShopRatings from '../pages/Shop/ShopRatings/ShopRatings.vue'
 import ShopInfo from '../pages/Shop/ShopInfo/ShopInfo.vue'
 
-import MSite from '../pages/MSite/MSite.vue'
-import Search from '../pages/Search/Search.vue'
-import Order from '../pages/Order/Order.vue'
-import Profile from '../pages/Profile/Profile.vue'
+// import MSite from '../pages/MSite/MSite.vue'
+// import Search from '../pages/Search/Search.vue'
+// import Order from '../pages/Order/Order.vue'
+// import Profile from '../pages/Profile/Profile.vue'
+// 路由组件懒加载
+const MSite = () => import('../pages/Msite/Msite.vue')
+const Search = () => import('../pages/Search/Search.vue')
+const Order = () => import('../pages/Order/Order.vue')
+const Profile = () => import('../pages/Profile/Profile.vue')
+
+
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/msite',

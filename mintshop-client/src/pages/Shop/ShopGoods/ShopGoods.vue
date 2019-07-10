@@ -96,7 +96,7 @@ export default {
         click: true
       })
       this.foodsScroll = new BScroll('.foods-wrapper', {
-        probeType: 2, // 因为惯性滑动不会触发
+        probeType: 3, // 因为惯性滑动不会触发
         click: true
       })
      // console.log(this.foodsScroll) debug scroll 是否起作用

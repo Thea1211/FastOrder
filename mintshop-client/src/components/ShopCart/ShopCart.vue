@@ -14,7 +14,9 @@
         </div>icon-shopping
         <div class="content-right">
           <div class="pay" :class="payClass">
-            {{payText}}
+            <span v-if="totalPrice == 0">{{payText}}</span>
+            <span v-else-if="totalPrice < this.info.minPrice">{{payText}}</span>
+            <router-link :to="{path:'/confirmOrder'}" tag="span" v-else>{{payText}}</router-link>
           </div>
         </div>
       </div>
@@ -28,7 +30,7 @@
             <ul>
               <li class="food" v-for="(food, index) in cartFoods" :key="index">
                 <span class="name">{{food.name}}</span>
-                <div class="price"><span>￥{{food.price}}</span></div>
+                <div class="price"><span>￥{{food.price*food.count}}</span></div>
                 <div class="cartcontrol-wrapper">
                   <CartControl :food="food"/>
                 </div>

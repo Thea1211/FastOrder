@@ -16,6 +16,7 @@ const MSite = () => import('../pages/Msite/Msite.vue')
 const Search = () => import('../pages/Search/Search.vue')
 const Order = () => import('../pages/Order/Order.vue')
 const Profile = () => import('../pages/Profile/Profile.vue')
+const confirmOrder = () => import('../pages/confirmOrder/confirmOrder.vue')
 
 
 Vue.use(Router)
@@ -51,6 +52,13 @@ export default new Router({
       component: Profile,
       meta: {
         showFooter: true
+      }
+    },
+    {
+      path: '/confirmOrder',
+      component: confirmOrder,
+      meta: {
+        showFooter: false
       }
     },
     {
